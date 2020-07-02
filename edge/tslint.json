@@ -1,5 +1,5 @@
 {
-  "extends": "tslint:recommended",
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
   "rules": {
     "member-ordering": false,
     "object-literal-sort-keys": false,
@@ -7,8 +7,6 @@
     "quotemark": [true, "single"]
   },
   "linterOptions": {
-    "exclude": [
-      "./node_modules/**"
-    ]
+    "exclude": ["./node_modules/**"]
   }
 }
