@@ -4,6 +4,7 @@
     "member-ordering": false,
     "object-literal-sort-keys": false,
     "ordered-imports": false,
+    "no-string-literal": false,
     "quotemark": [true, "single"]
   },
   "linterOptions": {

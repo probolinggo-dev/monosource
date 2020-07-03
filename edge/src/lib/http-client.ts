@@ -1,8 +1,9 @@
 import request from 'superagent';
 import qs from 'qs';
-import logger from './logger';
 import winston from 'winston';
 import ErrorStackParser from 'error-stack-parser';
+import camelcaseKeys from 'camelcase-keys';
+import logger from './logger';
 
 export enum HttpMethod {
   GET = 'GET',
@@ -87,7 +88,7 @@ export abstract class HttpClient {
         )} | query ${JSON.stringify(params.query || {})}`
       );
       const response = await this.sendRequest(params);
-      return response.body;
+      return camelcaseKeys(response.body, { deep: true });
     } catch (error) {
       const err = error as request.ResponseError;
       this.logger.error(
