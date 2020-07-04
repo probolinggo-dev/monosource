@@ -1,6 +1,6 @@
 {
   "name": "edge",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "api gateway for probolinggo-dev",
   "main": "index.js",
   "license": "MIT",
