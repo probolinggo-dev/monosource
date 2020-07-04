@@ -1,0 +1,12 @@
+steps:
+  - name: node:10.15.1
+    entrypoint: npm
+    args: ['install']
+  - name: node:10.15.1
+    entrypoint: npm
+    args: ['run', 'create-env']
+    env:
+      - 'GH_ACCESS_TOKEN=${_GH_ACCESS_TOKEN}'
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['app', 'deploy']
+timeout: '1600s'
