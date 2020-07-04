@@ -17,13 +17,15 @@ export abstract class HttpClient {
   private host: string;
   private maxRetries: number;
   private serviceName: string;
+  private predefinedHeaders: Record<string, any>;
   private logger: winston.Logger;
   log: winston.LogMethod;
 
-  constructor(params: { host: string; maxRetries?: number }) {
+  constructor(params: { host: string; maxRetries?: number; headers?: {} }) {
     this.host = params.host;
     this.maxRetries = params.maxRetries || 2;
     this.serviceName = this.constructor.toString().match(/\w+/g)[1];
+    this.predefinedHeaders = params.headers;
     this.logger = logger;
     this.log = logger.log;
   }
@@ -40,27 +42,27 @@ export abstract class HttpClient {
       case HttpMethod.POST:
         return request
           .post(this.host + path)
-          .set(headers)
+          .set(Object.assign({}, this.predefinedHeaders, headers))
           .send(JSON.stringify(body))
           .query(qs.stringify(query))
           .retry(this.maxRetries);
       case HttpMethod.GET:
         return request
           .get(this.host + path)
-          .set(headers)
+          .set(Object.assign({}, this.predefinedHeaders, headers))
           .query(qs.stringify(query))
           .retry(this.maxRetries);
       case HttpMethod.PUT:
         return request
           .put(this.host + path)
-          .set(headers)
+          .set(Object.assign({}, this.predefinedHeaders, headers))
           .send(JSON.stringify(body))
           .query(qs.stringify(query))
           .retry(this.maxRetries);
       case HttpMethod.DELETE:
         return request
           .delete(this.host + path)
-          .set(headers)
+          .set(Object.assign({}, this.predefinedHeaders, headers))
           .send(JSON.stringify(body))
           .query(qs.stringify(query))
           .retry(this.maxRetries);
