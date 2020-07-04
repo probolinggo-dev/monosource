@@ -8,8 +8,8 @@ steps:
     entrypoint: npm
     args: ['run', 'create-env']
     env:
-      dir: 'edge'
       - 'GH_ACCESS_TOKEN=${_GH_ACCESS_TOKEN}'
   - name: 'gcr.io/cloud-builders/gcloud'
+    dir: 'edge'
     args: ['app', 'deploy']
 timeout: '1600s'
