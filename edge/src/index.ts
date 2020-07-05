@@ -6,8 +6,6 @@ import logger from './lib/logger';
 import { buildSchema } from 'type-graphql';
 import glob from 'glob';
 
-initializeDotEnv(process.env.NODE_ENV || 'development');
-
 const PORT = process.env.PORT || 4000;
 
 const main = async () => {
@@ -36,4 +34,4 @@ const main = async () => {
   );
 };
 
-main();
+initializeDotEnv(process.env.NODE_ENV || 'development').finally(main);
