@@ -6,6 +6,7 @@
     "ordered-imports": false,
     "no-string-literal": false,
     "max-classes-per-file": false,
+    "forin": false,
     "quotemark": [true, "single"]
   },
   "linterOptions": {

@@ -28,6 +28,7 @@ const main = async () => {
   });
 
   const app = express();
+  app.enable('trust proxy');
   server.applyMiddleware({ app });
 
   app.listen({ port: PORT }, () =>

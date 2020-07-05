@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { initializeDotEnv } from 'src/lib/dotenv';
+import { initializeDotEnv } from '../../../src/lib/dotenv';
 
 const envPath = path.resolve(process.cwd(), '.env');
 const envString = 'environment = default';

@@ -1,5 +1,5 @@
-import { HttpClient, HttpMethod } from 'src/lib/http-client';
-import { githubConfig } from 'src/config/github.config';
+import { HttpClient, HttpMethod } from '../../lib/http-client';
+import { githubConfig } from '../../config/github.config';
 import { GithubUserModel } from './models/github-user.model';
 import { MembershipStatusModel } from './models/membership-status.mode';
 
