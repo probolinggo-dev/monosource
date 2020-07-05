@@ -3,13 +3,9 @@ steps:
     dir: 'edge'
     entrypoint: npm
     args: ['install']
-  - name: node:10.15.1
-    dir: 'edge'
-    entrypoint: npm
-    args: ['run', 'create-env']
+  - name: 'gcr.io/cloud-builders/gcloud'
     env:
       - 'GH_ACCESS_TOKEN=${_GH_ACCESS_TOKEN}'
-  - name: 'gcr.io/cloud-builders/gcloud'
     dir: 'edge'
     args: ['app', 'deploy']
 timeout: '1600s'
