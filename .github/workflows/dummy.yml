@@ -6,9 +6,13 @@ name: Dummy Test For Monorepo
 on:
   push:
     branches: [master]
+    paths-ignore:
+    - 'edge/**'
 
   pull_request:
     branches: [master]
+    paths-ignore:
+    - 'edge/**'
 
 jobs:
   test:
