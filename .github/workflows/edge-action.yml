@@ -7,11 +7,11 @@ on:
   push:
     branches: [master]
     paths:
-      - "edge/*"
+      - "edge/**"
   pull_request:
     branches: [master]
     paths:
-      - "edge/*"
+      - "edge/**"
 
 jobs:
   test:
