@@ -9,6 +9,8 @@ import {
 } from 'type-graphql';
 import { GithubUserModel } from './models/github-user.model';
 import { MembershipStatusModel } from './models/membership-status.mode';
+import { GithubRepositoryModel } from './models/github-repository.model';
+import { GithubContributorModel } from './models/github-contributor.model';
 
 @Resolver(() => GithubUserModel)
 export class GithubUserResolver {
@@ -20,6 +22,27 @@ export class GithubUserResolver {
   @FieldResolver()
   name(@Root() user: GithubUserModel) {
     return user.login;
+  }
+}
+
+@Resolver(() => GithubContributorModel)
+export class GithubContributorResolver {
+  @Query(() => [GithubContributorModel])
+  async getOrgContributors() {
+    return githubService.getOrgContributors();
+  }
+
+  @FieldResolver()
+  name(@Root() contributor: GithubContributorModel) {
+    return contributor.login;
+  }
+}
+
+@Resolver(() => GithubRepositoryModel)
+export class GithubRepositoryResolver {
+  @Query(() => [GithubRepositoryModel])
+  async getOrgRepositories() {
+    return githubService.getOrgRepos();
   }
 }
 

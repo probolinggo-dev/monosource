@@ -1,8 +1,15 @@
 import {
   GithubUserResolver,
   GithubMembershipStatusResolver,
+  GithubRepositoryResolver,
+  GithubContributorResolver,
 } from './github.resolver';
 
 export default {
-  resolvers: [GithubUserResolver, GithubMembershipStatusResolver],
+  resolvers: [
+    GithubUserResolver,
+    GithubMembershipStatusResolver,
+    GithubRepositoryResolver,
+    GithubContributorResolver,
+  ],
 };
