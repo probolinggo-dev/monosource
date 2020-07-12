@@ -1,0 +1,10 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+span.highlighted-text {
+  background-image: linear-gradient(98deg, #ffee62, #ffee62, #ffee62);
+  border-radius: 35% 33% 67% 16%;
+}
