@@ -1,3 +1,6 @@
 [submodule "hayati-bot"]
 	path = hayati-bot
 	url = https://github.com/probolinggo-dev/hayati-bot.git
+[submodule "probot"]
+	path = probot
+	url = https://github.com/probolinggo-dev/probot.git
