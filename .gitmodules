@@ -4,3 +4,6 @@
 [submodule "probot"]
 	path = probot
 	url = https://github.com/probolinggo-dev/probot
+[submodule "career-cms"]
+	path = career-cms
+	url = https://github.com/dns2012/career.probolinggo.dev-backend.git
