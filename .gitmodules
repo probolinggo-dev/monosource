@@ -7,3 +7,6 @@
 [submodule "career-cms"]
 	path = career-cms
 	url = https://github.com/dns2012/career.probolinggo.dev-backend.git
+[submodule "career-frontsite"]
+	path = career-frontsite
+	url = https://github.com/consciousnessdev/career.probolinggo.dev-frontend.git
